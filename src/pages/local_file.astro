@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<Header />
+		<div>ローカルにフォントファイルを配置して@font-faceでやる</div>
+		<p class="weight_400">フォントテスト-400</p>
+		<p class="weight_500">フォントテスト-500</p>
+		<p class="weight_700">フォントテスト-700</p>
+	</main>
+</Layout>
+
+<style lang="scss">
+  @font-face {
+    font-family: "Noto Serif JP";
+    src: url("/fonts/noto-serif-jp-regular.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Noto Serif JP";
+    src: url("/fonts/noto-serif-jp-500.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Noto Serif JP";
+    src: url("/fonts/noto-serif-jp-700.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  * {
+    font-family: "Noto Serif JP", sans-serif;
+  }
+	.weight_400 {
+		font-weight: 400;
+	}
+	.weight_500 {
+		font-weight: 500;
+	}
+	.weight_700 {
+		font-weight: 700;
+	}
+</style>
